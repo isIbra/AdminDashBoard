@@ -1,6 +1,6 @@
-.sidebar{
+.sidebar {
     // background-color: #28899E;
-    flex: 1;
+    flex: 1.2;
     border-right: 0.5px solid rgb(241, 241, 241);
     min-height: 100vh;
     background-color: white;
@@ -11,25 +11,82 @@
         align-items: center;
         justify-content: center;
 
-        .logo{
+        .logo {
             font-size: 20px;
             font-weight: bold;
             color: #8AC41E;
         }
-        
+
     }
-    hr{
+
+    hr {
         height: 0;
         border: 0.5px solid rgb(241, 241, 241);
     }
 
-    .center{
+    .center {
         padding-left: 10px;
-        ul{
+
+        ul {
             list-style: none;
             margin: 0;
             padding: 0;
+
+            .title {
+                font-size: 10px;
+                font-weight: bold;
+                color: #717171;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #C1E6EE;
+                }
+
+                .icon {
+                    font-size: 18px;
+                    color: #60AC35;
+                }
+
+                span{
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #43454C;
+                    margin-left: 10px;
+                }
+            }
         }
-        
     }
+
+        .bottom{
+                display: flex;
+                align-items: center;
+                margin: 10px;
+
+                .colorOpt{
+                    width: 20px;
+                    height: 20px;
+                    background-repeat: 5px;
+                    border: 1px solid #43454C;
+                    cursor: pointer;
+                    margin: 5px;
+
+                    &:nth-child(1){
+                        background-color: whitesmoke;
+                    }
+                    &:nth-child(2){
+                        background-color: #0f1114;
+                    }
+                    // &:nth-child(3){
+                    //     background-color: #001346;
+                    // }
+                }
+        }
 }
