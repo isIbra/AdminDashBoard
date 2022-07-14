@@ -1,6 +1,8 @@
-.home{
-    background-color: rebeccapurple;
-    .title{color: white;
+.home {
+    display: flex;
 
+    .homeContainer {
+        // background-color: #8AC41E;
+        flex: 6;
     }
 }
