@@ -6,8 +6,11 @@ import FullscreenExitOutlinedIcon from "@material-ui/icons/FullscreenExitOutline
 import NotificationsNoneOutlinedIcon from "@material-ui/icons/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@material-ui/icons/ListOutlined";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
 
 const Navbar = () => {
+    const { dispatch } = useContext(DarkModeContext)
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -17,30 +20,30 @@ const Navbar = () => {
                 </div>
                 <div className="items">
                     <div className="item">
-                        <LanguageOutlinedIcon className="icon"/>
+                        <LanguageOutlinedIcon className="icon" />
                         English
                     </div>
                     <div className="item">
-                        <NightsStayOutlinedIcon className="icon"/>
+                        <NightsStayOutlinedIcon className="icon" onClick={() => dispatch({ type: "TOGGLE" })} />
                     </div>
                     <div className="item">
-                        <FullscreenExitOutlinedIcon className="icon"/>
+                        <FullscreenExitOutlinedIcon className="icon" />
                     </div>
                     <div className="item">
-                        <NotificationsNoneOutlinedIcon className="icon"/>
+                        <NotificationsNoneOutlinedIcon className="icon" />
                         <div className="counter">1</div>
                     </div>
                     <div className="item">
-                        <ChatBubbleOutlineOutlinedIcon className="icon"/>
+                        <ChatBubbleOutlineOutlinedIcon className="icon" />
                         <div className="counter">2</div>
                     </div>
                     <div className="item">
-                        <ListOutlinedIcon className="icon"/>
+                        <ListOutlinedIcon className="icon" />
                     </div>
                     <div className="item">
-                        <img src="https://i1.sndcdn.com/artworks-000494838255-ymdgd8-t500x500.jpg" 
-                        alt=""
-                        className="avatar" />
+                        <img src="https://i1.sndcdn.com/artworks-000494838255-ymdgd8-t500x500.jpg"
+                            alt=""
+                            className="avatar" />
                     </div>
                 </div>
             </div>

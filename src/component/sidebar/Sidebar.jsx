@@ -11,13 +11,19 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import CalendarViewDayOutlinedIcon from '@material-ui/icons/CalendarViewDayOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
-
+import { Link } from "react-router-dom"
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
 
 const Sidebar = () => {
+    const { dispatch } = useContext(DarkModeContext)
+
     return (
         <div className="sidebar">
             <div className="top">
-                <span className="logo">Yowmi</span>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <span className="logo">Yowmi</span>
+                </Link>
             </div>
             <hr />
             <div className="center">
@@ -28,14 +34,18 @@ const Sidebar = () => {
                         <span>Dashboard</span>
                     </li>
                     <p className="title">LISTS</p>
-                    <li>
-                        <PeopleOutlineIcon className="icon" />
-                        <span>Users</span>
-                    </li>
-                    <li>
-                        <CategoryOutlinedIcon className="icon" />
-                        <span>Products</span>
-                    </li>
+                    <Link to="/users" style={{ textDecoration: "none" }}>
+                        <li>
+                            <PeopleOutlineIcon className="icon" />
+                            <span>Users</span>
+                        </li>
+                    </Link>
+                    <Link to="/products" style={{ textDecoration: "none" }}>
+                        <li>
+                            <CategoryOutlinedIcon className="icon" />
+                            <span>Products</span>
+                        </li>
+                    </Link>
                     <li>
                         <LocalMallOutlinedIcon className="icon" />
                         <span>Orders</span>
@@ -78,10 +88,10 @@ const Sidebar = () => {
                 </ul>
             </div>
             <div className="bottom">
-                <div className="colorOpt"></div>
-                <div className="colorOpt"></div>
+                <div className="colorOpt" onClick={() => dispatch({ type: "LIGHT" })}></div>
+                <div className="colorOpt" onClick={() => dispatch({ type: "DARK" })}></div>
             </div>
-        </div>
+        </div >
     )
 }
 
