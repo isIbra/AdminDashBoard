@@ -1,7 +1,7 @@
 import Navbar from "../../component/navbar/Navbar";
 import Sidebar from "../../component/sidebar/Sidebar";
 import "./new.scss"
-import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 
 const New = () => {
     return (
@@ -13,15 +13,15 @@ const New = () => {
                     <h1>Add new User</h1></div>
                 <div className="bottom">
                     <div className="left">
-                        <img src="https://i1.sndcdn.com/artworks-000494838255-ymdgd8-t500x500.jpg" alt="" />
+                        <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt="" />
                     </div>
                     <div className="right">
                         <form>
                             <div className="formInput">
-                                <label>
-                                    <DriveFolderUploadOutlinedIcon />
+                                <label htmlFor="file">
+                                    Image:    <UploadFileOutlinedIcon className="icon" />
                                 </label>
-                                <input type="text" placeholder="obi-wan" />
+                                <input type="file" id="file" style={{ display: "none" }} />
                             </div>
                             <div className="formInput">
                                 <label>Username</label>
@@ -51,7 +51,7 @@ const New = () => {
                                 <label>Country</label>
                                 <input type="text" placeholder="outer realem" />
                             </div>
-                             <button>send</button>
+                            <button>SEND</button>
                         </form>
                     </div>
                 </div>
